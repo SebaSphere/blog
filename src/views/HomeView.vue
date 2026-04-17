@@ -17,10 +17,14 @@
     <br>
     <h1>My most recent posts</h1>
     <div v-for="blog in blogFileList.blogDetails" :key="blog.path" @click="router.push(`/content/${blog.id}`)">
-      <blog-title :blog-information="blog"></blog-title>
+      <blog-title :blog-information="blog" class="blog-title"></blog-title>
     </div>
   </main>
 </template>
 
 <style scoped>
+  .blog-title {
+    margin-bottom: 1rem;
+  }
+
 </style>

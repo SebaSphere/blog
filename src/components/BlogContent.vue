@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router';
 import { BlogFileList } from '@/assets/ts/BlogObject';
 import { computed } from 'vue';
+import 'giscus';
 
 const route = useRoute();
 const blogFileList = new BlogFileList();
@@ -29,6 +30,23 @@ const blog = computed(() => {
   <div v-else>
     <p>Blog not found.</p>
     <router-link to="/">Back to home</router-link>
+  </div>
+  <div v-if="blog" class="mt-8">
+    <giscus-widget
+        id="comments"
+        repo="SebaSphere/blog"
+        repoid="R_kgDORbZ9cA"
+        category="Blog Content"
+        categoryid="DIC_kwDORbZ9cM4C51V6"
+        mapping="pathname"
+        strict="0"
+        reactionsenabled="1"
+        emitmetadata="0"
+        inputposition="top"
+        theme="preferred_color_scheme"
+        lang="en"
+        loading="lazy"
+    ></giscus-widget>
   </div>
 </template>
 
