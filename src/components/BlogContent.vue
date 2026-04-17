@@ -14,39 +14,41 @@ const blog = computed(() => {
 </script>
 
 <template>
-  <div v-if="blog" class="blog-content prose dark:prose-invert max-w-none">
-    <router-link to="/" class="text-blue-500 hover:underline mb-4 inline-block">&larr; Back to home</router-link>
-    <h1>{{ blog.title }}</h1>
-    <div class="flex gap-4 text-sm text-gray-500 mb-6">
-      <span>{{ blog.date.toLocaleDateString() }}</span>
-      <div class="flex gap-2">
-        <span v-for="tag in blog.tags" :key="tag" class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded">
-          {{ tag }}
-        </span>
+  <div>
+    <div v-if="blog" class="blog-content prose dark:prose-invert max-w-none">
+      <router-link to="/" class="text-blue-500 hover:underline mb-4 inline-block">&larr; Back to home</router-link>
+      <h1>{{ blog.title }}</h1>
+      <div class="flex gap-4 text-sm text-gray-500 mb-6">
+        <span>{{ blog.date.toLocaleDateString() }}</span>
+        <div class="flex gap-2">
+          <span v-for="tag in blog.tags" :key="tag" class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded">
+            {{ tag }}
+          </span>
+        </div>
       </div>
+      <component v-if="blog.component" :is="blog.component" />
     </div>
-    <component v-if="blog.component" :is="blog.component" />
-  </div>
-  <div v-else>
-    <p>Blog not found.</p>
-    <router-link to="/">Back to home</router-link>
-  </div>
-  <div v-if="blog" class="mt-8">
-    <giscus-widget
-        id="comments"
-        repo="SebaSphere/blog"
-        repoid="R_kgDORbZ9cA"
-        category="Blog Content"
-        categoryid="DIC_kwDORbZ9cM4C51V6"
-        mapping="pathname"
-        strict="0"
-        reactionsenabled="1"
-        emitmetadata="0"
-        inputposition="top"
-        theme="preferred_color_scheme"
-        lang="en"
-        loading="lazy"
-    ></giscus-widget>
+    <div v-else>
+      <p>Blog not found.</p>
+      <router-link to="/">Back to home</router-link>
+    </div>
+    <div v-if="blog" class="mt-8">
+      <giscus-widget
+          id="comments"
+          repo="SebaSphere/blog"
+          repoid="R_kgDORbZ9cA"
+          category="Blog Content"
+          categoryid="DIC_kwDORbZ9cM4C51V6"
+          mapping="pathname"
+          strict="0"
+          reactionsenabled="1"
+          emitmetadata="0"
+          inputposition="top"
+          theme="preferred_color_scheme"
+          lang="en"
+          loading="lazy"
+      ></giscus-widget>
+    </div>
   </div>
 </template>
 
