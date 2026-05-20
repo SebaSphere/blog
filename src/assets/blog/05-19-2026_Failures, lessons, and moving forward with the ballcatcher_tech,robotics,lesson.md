@@ -34,7 +34,7 @@ Before even proceeding with the summer rebuild, it's worth looking at what is ac
 - Swagger UI: Debug endpoint to call off events like homing and such
 - CAD design: I've made a base model for all parts that exists in Fusion 360, which needs edits for stability
 - Components settled on: I've bought everything I'd need such as power delivery, stepper motors, and such
-- Virtualized ball position recognization: While I'm sure I might run into some issues with lens distortion, I've been able to virtualize the core logic of ball recognition
+- Virtualized ball position recognition: While I'm sure I might run into some issues with lens distortion, I've been able to virtualize the core logic of ball recognition
 
 Here are some random pictures in no particular order:
 ![meow grip](https://i.imgur.com/0lMarka.png)
