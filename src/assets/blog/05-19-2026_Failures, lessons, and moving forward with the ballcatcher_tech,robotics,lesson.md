@@ -15,7 +15,7 @@ For the next few hours in a dazed state, I'd attempt to fix the bot with lots of
 ## Stepping back
 Into the rush to get a compromised, duct-taped mess of hopes and dreams, I was attempting to get the bot together and noticed for the motor that did work, one of the PUL+ wires were missing. Within my dash to get the project working, I guess I lost my tiny screwdriver so I didn't have the correct equipment to fix it. I brought spare wires and could have sworn I brought the tiny screwdriver, but I guess in my daze to get out my rental, I lost this.
 
-From there, after talking back and forward with cousin, I made the decision to consider my two major options, a medical withdrawal or a incomplete grade on the class. Thankfully, after some back and forth with my professor on my options, I was able to get an incomplete grade with an extension till the end of the summer. Finally, I was able to get some sleep...
+From there, after talking back and forth with cousin, I made the decision to consider my two major options, a medical withdrawal or a incomplete grade on the class. Thankfully, after some back and forth with my professor on my options, I was able to get an incomplete grade with an extension till the end of the summer. Finally, I was able to get some sleep...
 
 With the stressors of no longer worrying about a stressing deadline, I'd like to mention the positive instead of purely the gloom and doom.
 
