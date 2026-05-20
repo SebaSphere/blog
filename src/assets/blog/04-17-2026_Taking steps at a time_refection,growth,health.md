@@ -1,4 +1,4 @@
-![what's up fuckers](https://i.imgur.com/hDlVlkM.png)
+![what's up fuckers](/blog/images/hDlVlkM.png)
 > my friend Pineapple Cat at https://www.pineapplecat.dev/ 🍍🐱
 
 "what's up fuckers"
@@ -29,7 +29,7 @@ While I did run into the challenge of needing to redesign the bot from the groun
 
 Other than my challenges, I did well in considering how the yaw and pitch of the bot would actually work. It's interesting to understand what steps in a stepper motor actually mean and one intuitive small thing I could think about is realizing that gear ratios are simply the ratio of the motor to the stick controlling (in my case, the motor was connected at a 1/3 gear ratio to the stick)
 
-![ballcatcher bot](https://i.imgur.com/PK9Pfno.jpeg)
+![ballcatcher bot](/blog/images/PK9Pfno.jpeg)
 > my ballcatcher bot
 
 I did actually turn on my homelab and do some routine maintenance on it. Still works, one of the things that's really preventing me from using it is I don't control the ISP so I don't have access to stuff like port forwarding. There's some stuff I can do like NGINX reverse proxying or squid proxying on pfsense, which I'm aiming for squid proxying in the future. Ideally, I'd want to just open the full port range for the homelab on my ISP at my next crib 🔥
@@ -49,10 +49,10 @@ I'm hoping to process this more through starting therapy this weekend to focus m
 
 I've also been thinking about my childhood and some of my own behaviors and realized maybe I have ADHD or some sort of neurological disorder? It's a stigma and not really what I thought of it as by the people I've cut off, which I never really looked into if it's something. It doesn't change anything about me whatsoever, but I think this puts into context a lot of behaviors and quirks in my approach towards life. I'm not sure if I'm still going through withdrawals from quitting caffeine effectively through the start of March to March 16th or it revealed something else but it's definitely a subject to bring up with my therapist.
 
-![lol I have adhd](https://i.imgur.com/BqutisE.png)
+![lol I have adhd](/blog/images/BqutisE.png)
 > My friend Atakku at https://atakku.dev/
 
-![lmao neurodivergent](https://i.imgur.com/qCcyFM7.png)
+![lmao neurodivergent](/blog/images/qCcyFM7.png)
 > My friend Lily at https://github.com/AutumnalModding/
 
 I've mentioned this realization to some online frens I've talked to for a long time and some online communities I'm in, it's funny because it feels like I am the last person to find out about it 😭. 
@@ -75,7 +75,7 @@ At the primary doctor, I did learn I likely have hypertension a week ago so over
 
 I did have a medical emergency at the urgent care too yesterday on that matter, which I had terrible symptoms of having very low energy to move with a general feeling of dazedness. My blood pressure was very high on top of this with a low BPM reading for one reading, which I felt warranted the rideshare to Urgent Care. In hindsight, it was very cool I got a CAT scan (meow) and the short ramble I had with the doctor asking questions about it was super cool. I learned CT scans essentially act like a really expensive 3D resin printer but scanning layer by layer, which I thought was super cool to find out my brain was scanned in 2.5mm layer heights.
 
-![my brian](https://i.imgur.com/0O6WR5k.png)
+![my brian](/blog/images/0O6WR5k.png)
 > my brian (surprised to find out my noggin is not empty)
 
 I was able to see my CT scan from just asking the doctor, which he was questioning me at first why I wanted to see it but ended up having a cool conversation about it as someone who doesn't know much about it. I went on a slight tangent earlier today and saw it's possible to request your CT scan data. I put requesting the data for my CT scan on my TODO list since I really want to 3D print my brain now, it sounds fun to keep my brain as a trinket.
@@ -91,7 +91,7 @@ Some of the things I've been doing recently this month include:
 
 Hiking Royal Palms for 4.5 miles was an awesome introduction to get back into hiking, which has definitely made me have more joy for walking now. 
 
-![Royal Palms](https://i.imgur.com/nCIzodF.jpeg)
+![Royal Palms](/blog/images/nCIzodF.jpeg)
 
 I'm definitely aiming to walk for enjoyment more, which the relaxing nature of it helps. In general, more community events is something I want to take apart in more.
 
@@ -102,7 +102,7 @@ Another audiobook I'm currently in the middle of listening to is the book "Worki
 The Miami-dade transit system, while definitely not the greatest I've been on, has also been great to take more frequently. It's fun to either look out and see the world pass by, decompress, or work on a project I can bring on the goal like my journal. I'm fortunate enough to live very close to the train system, which I'm aiming to walk to the station more often as part of my commute to school.
 
 # the
-![the](https://i.imgur.com/v6B0qGA.png)
+![the](/blog/images/v6B0qGA.png)
 
 end, that's pretty much where I'm at right now. Still figuring things out, still building stuff, still trying to be a little better than yesterday.
 
@@ -111,9 +111,9 @@ I think I'm in a weird phase right now where I'm used to my new environment but 
 I'll make a separate technical post definitely for my ballcatcher with specifics on the technical side of things, which I plan to start after demo day this Monday in my Robotics class.
 
 ### ARTICLE 1
-![the end](https://i.imgur.com/1I1pcjk.png)
+![the end](/blog/images/1I1pcjk.png)
 ### ARTICLE 2
-![doggy dog](https://i.imgur.com/Uoq1Xvu.png)
+![doggy dog](/blog/images/Uoq1Xvu.png)
 > some random nerd in a signal group im in at https://moon.is.being.pet/
 
 bye
