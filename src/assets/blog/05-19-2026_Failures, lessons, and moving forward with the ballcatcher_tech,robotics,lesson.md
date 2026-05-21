@@ -10,7 +10,7 @@ It wasn't just balancing a brutal Algorithms final, which at the same time my ho
 After the tension sort of settled down, I called my cousin and asked him if I could head over to his house to change up my environment. Off from there, I drove down from South Miami to the Redlands, which I found to be a nice change of pace. While I was still running a billion miles a hour in my head talking myself off about the situation to my cousin, I had started setup on the project after I settled in and noticed a critical failure... The printed parts I had modeled were broken at the joints in several parts of the bot at the very last minute.
 
 For the next few hours in a dazed state, I'd attempt to fix the bot with lots of duct tape and massively scale back to work what I do have that isn't broken.
-![ball bot](/blog/images/WkuVpF7.jpeg)
+![ball bot](/images/WkuVpF7.jpeg)
 
 ## Stepping back
 Into the rush to get a compromised, duct-taped mess of hopes and dreams, I was attempting to get the bot together and noticed for the motor that did work, one of the PUL+ wires were missing. Within my dash to get the project working, I guess I lost my tiny screwdriver so I didn't have the correct equipment to fix it. I brought spare wires and could have sworn I brought the tiny screwdriver, but I guess in my daze to get out my rental, I lost this.
@@ -22,8 +22,8 @@ With the stressors of no longer worrying about a stressing deadline, I'd like to
 I enjoyed talking with younger cousin, sister, and cousin who's place I was over, the support provided and talking about general life stuff as things started to slightly calm down was a nice change in pace.
 
 Walking around the Redlands exurb was calming in a sense, I found it a different experience walking compared to the loudness of living in South Miami. I took a few pictures:
-![chicken](/blog/images/kUcmc5r.jpeg)
-![the fog](/blog/images/Suphx09.jpeg)
+![chicken](/images/kUcmc5r.jpeg)
+![the fog](/images/Suphx09.jpeg)
 
 ## What is done
 Before even proceeding with the summer rebuild, it's worth looking at what is actually functional. Despite the setbacks, the core infrastructure of the bot is there and is ready to be worked on again.
@@ -37,17 +37,17 @@ Before even proceeding with the summer rebuild, it's worth looking at what is ac
 - Virtualized ball position recognition: While I'm sure I might run into some issues with lens distortion, I've been able to virtualize the core logic of ball recognition
 
 Here are some random pictures in no particular order:
-![meow grip](/blog/images/0lMarka.png)
+![meow grip](/images/0lMarka.png)
 > desperation visualized
 
 ---
 
-![virtualized cameras](/blog/images/FAUZfhG.png)
+![virtualized cameras](/images/FAUZfhG.png)
 > virtualized dual-camera virtualized positioning (note: this isn't live but off a static file for testing)
 
 ---
 
-![god forsaken craft](/blog/images/pBSE3Uc.png)
+![god forsaken craft](/images/pBSE3Uc.png)
 > old prototype before the 270-degree redesign and slip ring mishaps
 
 ## Lessons

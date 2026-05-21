@@ -11,7 +11,7 @@ One of the ideas when I was working on this was how would I actually get the pos
 Well aside from that rant, goal of the project is to use two cameras to triangulate where a ball might land then move a funnel to wear we think the ball is going to land. Once we catch the ball, the goal I had in mind is to use a solenoid to essentially fling the ball in the general direction of the person (or trajectory it came from, might bring scope down to trajectory). I think it's a pretty neat project I could use to learn about the art of how cameras recognize distance, which I found this awesome project with some cool math on making this work at [https://github.com/AlexJinlei/Stereo_Vision_Camera](https://github.com/AlexJinlei/Stereo_Vision_Camera)
 
 Mostly, I've just been working on modelling the base for the stepper motor as of recent. There's a little bit of code that exists to move the motor I started but the main deliverable I want to achieve is modelling a v1 prototype for the pitch head. I've mostly just worked the bottom base so my parts actually connect, a silly sneak peak of the base can be found below:
-![Random wires and junk](/blog/images/NaSpNdM.png)
+![Random wires and junk](/images/NaSpNdM.png)
 
 There's a GitHub with the project too at [https://github.com/SebaSphere/ballcatcher](https://github.com/SebaSphere/ballcatcher), which I think it's also been a interesting experience to learn Kotlin. Honestly, it kind of feels like typescript but the JVM, honestly I could see myself using Kotlin more. Coroutines are also a very fun feature, which as a Java developer I really appreciate how easy it is to fire up threads with an easy-to-read syntax.
 
