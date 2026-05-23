@@ -46,7 +46,9 @@ export class BlogPost {
 		if (!filename.endsWith(".md")) return null;
 		const [datePart, titlePart, tagPart] = filename.slice(0, -3).split("_");
 		if (!datePart || !titlePart || !tagPart) return null;
-		const date = new Date(datePart);
+		const [month, day, year] = datePart.split("-");
+		if (!month || !day || !year) return null;
+		const date = new Date(`${year}-${month}-${day}T16:20:00-05:00`);
 		if (Number.isNaN(date.getTime())) return null;
 		const tags = tagPart
 			.split(",")
