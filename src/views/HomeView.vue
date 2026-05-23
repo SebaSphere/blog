@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import {BlogFileList} from "@/assets/ts/BlogObject";
   import BlogTitle from "@/components/BlogTitle.vue";
+  import RssButton from "@/components/RssButton.vue";
   import { useRouter } from 'vue-router';
 
   const blogFileList = new BlogFileList();
@@ -19,6 +20,9 @@
     <div v-for="blog in blogFileList.blogDetails" :key="blog.path" @click="router.push(`/content/${blog.id}`)">
       <blog-title :blog-information="blog" class="blog-title"></blog-title>
     </div>
+    <div class="rss-footer">
+      <rss-button href="https://notification.lachupacabra.club/rss" />
+    </div>
   </main>
 </template>
 
@@ -27,4 +31,9 @@
     margin-bottom: 1rem;
   }
 
+  .rss-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
 </style>
