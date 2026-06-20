@@ -43,7 +43,7 @@ export class BlogInformation {
             if (rawInput.length >= 3) {
                 const rawTags = tagPart.split(",")
 
-                this.title = titlePart;
+                this.title = titlePart.replace(/\(U\+([0-9A-Fa-f]{4,6})\)/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)));
                 this.date = new Date(datePart)
                 this.tags = rawTags;
             }
