@@ -2,7 +2,7 @@
 
 It's a hard as fuck quote I heard from my friend Alexa, she actually inspired me to start writing this from her coming out blog at [https://alxa.dev/blog/2026-06-26_this_was_hard](https://alxa.dev/blog/2026-06-26_this_was_hard)
 
-I don't think the quote can be taken with the contents of this entry but I feel it can be relatable to lots of people.
+I don't think the quote can be taken only to the contents of this entry but I feel it can be relatable to lots of people.
 
 To start, I don't think I have the right words and I still don't feel really 100% ready and know all the answers but I feel this needs to come out. My opinions and thoughts on everything are very likely to change but I'd like to write how I feel right now.
 
