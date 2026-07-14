@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <main>
+  <div class="blog">
     <p>This is a small blog I've made just to document cool things I've found or doing, general life events, and anything else I have in mind.</p>
     <br>
     <p>Aiming for monthly updates, always welcome to provide your thoughts at me@sebastianb.dev or my discord username "SebaSphere"</p>
@@ -23,7 +23,7 @@
     <div class="rss-footer">
       <rss-button href="https://notification.lachupacabra.club/rss" />
     </div>
-  </main>
+  </div>
 </template>
 
 <style scoped>
@@ -36,4 +36,9 @@
     justify-content: flex-end;
     margin-top: 2rem;
   }
+
+  :global(body) {
+    background-color: white;
+  }
+
 </style>

@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/blog/",
+  base: "/",
   plugins: [
     vue({ include: [/\.vue$/, /\.md$/] }),
     Markdown(),

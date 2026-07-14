@@ -1,12 +1,18 @@
 import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
+import BlogHomeView from '@/views/BlogHomeView.vue';
 import BlogContent from '@/components/BlogContent.vue';
+import MainPageView from "@/views/MainPageView.vue";
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: MainPageView
+  },
+  {
+    path: '/blog/',
+    name: 'blog',
+    component: BlogHomeView
   },
   {
     path: '/content/:id',

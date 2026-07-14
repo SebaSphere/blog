@@ -50,15 +50,19 @@
   }
 }
 
-*,
-*::before,
-*::after {
+/* Reset scoped to the blog wrapper so it doesn't touch the rest of the site. */
+.blog,
+.blog *,
+.blog *::before,
+.blog *::after {
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
 }
 
-body {
+/* Body-level typography/background applied to the blog wrapper instead of
+   <body>, so only blog pages get it. */
+.blog {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);

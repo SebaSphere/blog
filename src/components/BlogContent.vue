@@ -14,9 +14,9 @@ const blog = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="blog">
     <div v-if="blog" class="blog-content prose dark:prose-invert max-w-none">
-      <router-link to="/" class="text-blue-500 hover:underline mb-4 inline-block">&larr; Back to home</router-link>
+      <router-link to="/blog" class="text-blue-500 hover:underline mb-4 inline-block">&larr; Back to home</router-link>
       <h1>{{ blog.title }}</h1>
       <div class="flex gap-4 text-sm text-gray-500 mb-6">
         <span>{{ blog.date.toLocaleDateString() }}</span>
@@ -30,7 +30,7 @@ const blog = computed(() => {
     </div>
     <div v-else>
       <p>Blog not found.</p>
-      <router-link to="/">Back to home</router-link>
+      <router-link to="/blog">Back to home</router-link>
     </div>
     <div v-if="blog" class="mt-8">
       <giscus-widget

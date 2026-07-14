@@ -40,7 +40,7 @@ export class RssFeedBuilder {
 			.forEach((post) => {
 				feed.addItem({
 					title: post.title,
-					id: post.url,
+					id: new URL(post.url).pathname,
 					link: post.url,
 					date: post.date,
 					category: post.tags.map((t) => ({ name: t })),
