@@ -37,6 +37,24 @@ export default {
 						headers: {"Content-Type": "application/json"},
 					});
 				}
+				case "/top-artists": {
+					// TODO: change the API key into a token (good thing this isn't too important)
+					const api_key = "3a1a63c7acb35a7a8395ad86365cfb49";
+					if (!api_key) {
+						return new Response("API key not configured", {status: 500});
+					}
+					// lastfm get
+					const lastfmUrl = `http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=SebaSphere&period=1month&api_key=${api_key}&format=json`;
+					const lastfmResponse = await fetch(lastfmUrl);
+					if (!lastfmResponse.ok) {
+						throw new Error(`Failed to fetch top artists: ${lastfmResponse.statusText}`);
+					}
+					const topArtists = await lastfmResponse.json();
+
+					return new Response(JSON.stringify(topArtists), {
+						headers: {"Content-Type": "application/json"},
+					});
+				}
 				case "/rss": {
 					const posts = await new BlogRepository().listPosts();
 					const xml = RssFeedBuilder.forFeedUrl(url.toString()).build(posts);
