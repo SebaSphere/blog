@@ -49,7 +49,48 @@ export default {
 					if (!lastfmResponse.ok) {
 						throw new Error(`Failed to fetch top artists: ${lastfmResponse.statusText}`);
 					}
-					const topArtists = await lastfmResponse.json();
+					const topArtists = await lastfmResponse.json() as {
+						topartists?: {
+							artist?: Array<{
+								name?: string;
+								image?: Array<{ size?: string; "#text"?: string }>;
+							}>;
+						};
+					};
+
+					// Last.fm no longer returns real artist pictures (just a
+					// placeholder star), so pull each artist's image from Deezer's
+					// open search API and splice it into the image array, keeping
+					// the same {size, #text} shape the client already reads.
+					const artists = topArtists.topartists?.artist ?? [];
+					await Promise.all(
+						artists.map(async (artist) => {
+							if (!artist.name) return;
+							try {
+								const deezerUrl = `https://api.deezer.com/search/artist?limit=1&q=${encodeURIComponent(artist.name)}`;
+								const deezerResponse = await fetch(deezerUrl);
+								if (!deezerResponse.ok) return;
+								const deezer = await deezerResponse.json() as {
+									data?: Array<{
+										picture_small?: string;
+										picture_medium?: string;
+										picture_big?: string;
+										picture_xl?: string;
+									}>;
+								};
+								const hit = deezer.data?.[0];
+								if (!hit) return;
+								artist.image = [
+									{size: "small", "#text": hit.picture_small ?? ""},
+									{size: "medium", "#text": hit.picture_medium ?? ""},
+									{size: "large", "#text": hit.picture_big ?? ""},
+									{size: "extralarge", "#text": hit.picture_xl ?? ""},
+								];
+							} catch {
+								// Keep whatever Last.fm gave us for this artist.
+							}
+						}),
+					);
 
 					return new Response(JSON.stringify(topArtists), {
 						headers: {
