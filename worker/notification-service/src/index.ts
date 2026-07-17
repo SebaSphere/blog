@@ -52,7 +52,10 @@ export default {
 					const topArtists = await lastfmResponse.json();
 
 					return new Response(JSON.stringify(topArtists), {
-						headers: {"Content-Type": "application/json"},
+						headers: {
+							"Content-Type": "application/json",
+							"Access-Control-Allow-Origin": "*",
+						},
 					});
 				}
 				case "/rss": {
