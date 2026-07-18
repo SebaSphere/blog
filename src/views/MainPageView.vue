@@ -36,6 +36,8 @@ const bannerEl = ref<HTMLElement | null>(null);
     <p>project board</p>
     <p>blog: find this <a href="/blog" style="color: blue">here</a>.</p>
     <friend-buttons></friend-buttons>
+    <br>
+    <p>btw you can bring the cat to the music tab to open it</p>
     <!-- keep: the activator stays visible; the box lifts it above itself. -->
     <reveal-scope keep>
       <div ref="musicEl" class="music-anchor">
