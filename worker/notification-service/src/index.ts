@@ -90,6 +90,52 @@ async function resolveArtistImageByMbid(
 	}
 }
 
+// Last.fm's "no image" star; an image array full of these (or empty strings)
+// means there's no real art.
+const PLACEHOLDER_HASH = "2a96cbd8b46e442fc41c2b86b821562f";
+function hasRealImage(images?: Array<{ "#text"?: string }>): boolean {
+	return (images ?? []).some(
+		(i) => i["#text"] && !i["#text"].includes(PLACEHOLDER_HASH),
+	);
+}
+
+// Resolve a track's album cover from Deezer, matched on artist + title (Last.fm
+// often returns no art for recent tracks). Returns the Last.fm {size, #text}
+// shape, or null if there's no confident match.
+async function resolveTrackImage(
+	artist: string,
+	track: string,
+): Promise<ArtistImage[] | null> {
+	try {
+		// Deezer's advanced search filters; strip quotes so they can't break it.
+		const q = `artist:"${artist.replace(/"/g, "")}" track:"${track.replace(/"/g, "")}"`;
+		const res = await fetch(
+			`https://api.deezer.com/search?limit=1&q=${encodeURIComponent(q)}`,
+		);
+		if (!res.ok) return null;
+		const data = (await res.json()) as {
+			data?: Array<{
+				album?: {
+					cover_small?: string;
+					cover_medium?: string;
+					cover_big?: string;
+					cover_xl?: string;
+				};
+			}>;
+		};
+		const album = data.data?.[0]?.album;
+		if (!album?.cover_medium) return null;
+		return [
+			{ size: "small", "#text": album.cover_small ?? "" },
+			{ size: "medium", "#text": album.cover_medium ?? "" },
+			{ size: "large", "#text": album.cover_big ?? "" },
+			{ size: "extralarge", "#text": album.cover_xl ?? "" },
+		];
+	} catch {
+		return null;
+	}
+}
+
 export default {
 	async fetch(request, _env, ctx): Promise<Response> {
 		if (request.method !== "GET" && request.method !== "HEAD") {
@@ -113,7 +159,30 @@ export default {
 					if (!lastfmResponse.ok) {
 						throw new Error(`Failed to fetch tracks: ${lastfmResponse.statusText}`);
 					}
-					const tracks = await lastfmResponse.json();
+					const tracks = await lastfmResponse.json() as {
+						recenttracks?: {
+							track?: Array<{
+								name?: string;
+								artist?: { "#text"?: string };
+								image?: Array<{ size?: string; "#text"?: string }>;
+							}>;
+						};
+					};
+
+					// Last.fm rarely carries album art for recent tracks, so fill in
+					// each missing cover from Deezer. Only the first few (the ones the
+					// client shows) are enriched to keep this fast — this endpoint
+					// isn't cached, since "now playing" has to stay live.
+					const recent = tracks.recenttracks?.track ?? [];
+					await Promise.all(
+						recent.slice(0, 8).map(async (t) => {
+							if (hasRealImage(t.image)) return;
+							const artist = t.artist?.["#text"];
+							if (!t.name || !artist) return;
+							const image = await resolveTrackImage(artist, t.name);
+							if (image) t.image = image;
+						}),
+					);
 
 					return new Response(JSON.stringify(tracks), {
 						headers: {
