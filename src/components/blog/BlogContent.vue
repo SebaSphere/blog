@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { BlogFileList } from '@/assets/ts/BlogObject';
+import { BlogFileList } from '@/assets/ts/BlogObject.ts';
 import { computed } from 'vue';
 import 'giscus';
 

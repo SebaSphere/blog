@@ -1,6 +1,6 @@
 import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router';
 import BlogHomeView from '@/views/BlogHomeView.vue';
-import BlogContent from '@/components/BlogContent.vue';
+import BlogContent from '@/components/blog/BlogContent.vue';
 import MainPageView from "@/views/MainPageView.vue";
 
 const routes = [

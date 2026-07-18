@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import {BlogFileList} from "@/assets/ts/BlogObject";
-  import BlogTitle from "@/components/BlogTitle.vue";
-  import RssButton from "@/components/RssButton.vue";
+  import BlogTitle from "@/components/blog/BlogTitle.vue";
+  import RssButton from "@/components/blog/RssButton.vue";
   import { useRouter } from 'vue-router';
 
   const blogFileList = new BlogFileList();
