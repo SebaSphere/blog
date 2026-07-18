@@ -24,16 +24,18 @@ const bannerEl = ref<HTMLElement | null>(null);
         <home-banner></home-banner>
       </div>
     </reveal-scope>
-<!--    <figure class="construction-notice">-->
-<!--      <img src="/images/construction.gif" alt="Under construction" />-->
-<!--      <figcaption>-->
-<!--        This site is currently in construction.-->
-<!--        <br>-->
-<!--        Please visit <a href="https://sebastianb.dev" style="color: blue;">sebastianb.dev</a> for more info.-->
-<!--      </figcaption>-->
-<!--    </figure>-->
-<!--    <p>TODO FOR ME TO ADD!!!</p>-->
-<!--    <friend-buttons></friend-buttons>-->
+    <figure class="construction-notice">
+      <img src="/images/construction.gif" alt="Under construction" />
+      <figcaption>
+        This site is currently in construction.
+        <br>
+        Please visit <a href="https://thesphere.dev" style="color: blue;">thesphere.dev</a> for my original site.
+      </figcaption>
+    </figure>
+    <p>TODO FOR ME TO ADD!!!</p>
+    <p>project board</p>
+    <p>blog: find this <a href="/blog" style="color: blue">here</a>.</p>
+    <friend-buttons></friend-buttons>
     <!-- keep: the activator stays visible; the box lifts it above itself. -->
     <reveal-scope keep>
       <div ref="musicEl" class="music-anchor">
@@ -51,10 +53,6 @@ const bannerEl = ref<HTMLElement | null>(null);
         ></music-listening-word-map>
       </div>
     </anchored-box>
-<!--    <p>what im listening to</p>-->
-<!--    <p>about me</p>-->
-<!--    <p>project board</p>-->
-<!--    <p>blog: find this <a href="/blog" style="color: blue">here</a>.</p>-->
     <!-- keep: the cat stays visible so it can still be sent home to close. -->
     <reveal-scope keep>
       <cat-playgarden></cat-playgarden>
