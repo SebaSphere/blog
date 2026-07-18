@@ -51,6 +51,11 @@ const inBox = (px: number, py: number): boolean => {
 };
 
 const OPEN_GRACE_MS = 450;
+// Auto-close timeout (ms). The countdown resets whenever the cat is inside the box.
+const ENTRY_REQUIRE_MS = 5000;
+let entryTimerActive = false;
+// Tracks when the auto-close countdown last reset (initially when the box opens).
+let entryStartedAt = 0;
 
 let rafId: number | null = null;
 let liftedEl: HTMLElement | null = null;
@@ -102,21 +107,46 @@ const tick = () => {
       if (CatEngine.isOver(el)) {
         visible.value = true;
         openedAt = performance.now();
+        entryTimerActive = true;
+        entryStartedAt = openedAt;
         const r = el.getBoundingClientRect();
         openAnchorRect = { x: r.left, y: r.top, w: r.width, h: r.height };
       }
     } else {
+      const now = performance.now();
+      const inTheBox = inBox(pos.x, pos.y);
       const stay =
-        inBox(pos.x, pos.y) ||
+        inTheBox ||
         CatEngine.isOver(el) ||
         (openAnchorRect !== null && inRect(pos.x, pos.y, openAnchorRect));
-      const inGrace = performance.now() - openedAt < OPEN_GRACE_MS;
-      if (state === CatStates.CAT_AT_HOME || (!stay && !inGrace)) {
-        visible.value = false;
+      const inGrace = now - openedAt < OPEN_GRACE_MS;
+
+      if (entryTimerActive) {
+        // While the box is open, keep a rolling 5s timeout that resets when
+        // the cat is inside the box. Close if the cat stays out for >= timeout.
+        if (inTheBox) {
+          // Reset the inactivity timer while in the box.
+          entryStartedAt = now;
+        } else if (now - entryStartedAt >= ENTRY_REQUIRE_MS) {
+          // Auto-close after being outside the box for too long.
+          visible.value = false;
+          entryTimerActive = false;
+        }
+        // Regardless of timer, if the cat goes home, close immediately.
+        if (state === CatStates.CAT_AT_HOME) {
+          visible.value = false;
+          entryTimerActive = false;
+        }
+      } else {
+        // Fallback close rules if the timer was disabled unexpectedly.
+        if (state === CatStates.CAT_AT_HOME || (!stay && !inGrace)) {
+          visible.value = false;
+        }
       }
     }
   } else {
     visible.value = false;
+    entryTimerActive = false;
   }
 
   if (visible.value && el) {
