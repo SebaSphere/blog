@@ -116,7 +116,11 @@ export default {
 					const tracks = await lastfmResponse.json();
 
 					return new Response(JSON.stringify(tracks), {
-						headers: {"Content-Type": "application/json"},
+						headers: {
+							"Content-Type": "application/json",
+							"Access-Control-Allow-Origin": "*",
+							"Cache-Control": "no-store",
+						},
 					});
 				}
 				case "/top-artists": {
