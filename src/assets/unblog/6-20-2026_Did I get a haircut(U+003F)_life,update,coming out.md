@@ -31,6 +31,8 @@ I don't know, gender is kind of a secondary thing for me and I guess right now I
 # political and societal impacts
 While this journey is an amazing change for my physique and well-being, I think it would be a disservice not to write about this. Right now, society wise it isn't an objectively super great time to be queer of any sort.
 
+AAAHH THIS IS NOT DONE THIS SECTION AND I'M STILL WORKING ON THIS (i will lock in eventually)
+
 # the interesting science of hormones + the effects on me
 One of the main reasons I started HRT was the effect it has on mood. I had tried a 3-day supply of estrogen from a friend's supply near the beginning of that month. What stuck out to me was that sense of calmness and serenity it had on my mood. I remember waiting at the airport for my plane back to Florida with a sense of happiness just for the world in general. This is the main turning point for me making this decision with my life and I'm happy I did.
 
